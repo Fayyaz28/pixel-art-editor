@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Pixel Art Editor</h1>
+        
+        <div class="controls">
+            <div class="tool-section">
+                <h3>Tools</h3>
+                <div class="tools">
+                    <button class="tool-btn active" data-tool="pencil">✏️ Pencil</button>
+                    <button class="tool-btn" data-tool="eraser">🧽 Eraser</button>
+                    <button class="tool-btn" data-tool="fill">🪣 Fill</button>
+                </div>
+            </div>
+
+            <div class="color-section">
+                <h3>Colors</h3>
+                <div class="color-palette" id="color-palette"></div>
+                <input type="color" id="custom-color" value="#ff0000">
+                <button id="add-color">Add Color</button>
+            </div>
+
+            <div class="grid-section">
+                <h3>Canvas</h3>
+                <select id="grid-size">
+                    <option value="8">8x8</option>
+                    <option value="16" selected>16x16</option>
+                    <option value="32">32x32</option>
+                </select>
+                <button id="new-grid">New Canvas</button>
+                <button id="clear-btn">Clear Canvas</button>
+            </div>
+
+            <div class="save-section">
+                <h3>Save & Export</h3>
+                <input type="text" id="art-name" placeholder="My Artwork">
+                <button id="save-btn">💾 Save</button>
+                <button id="export-btn">📤 Export PNG</button>
+            </div>
+        </div>
+
+        <div class="editor-area">
+            <canvas id="pixel-canvas" width="512" height="512"></canvas>
+            <div class="grid-overlay" id="grid-overlay"></div>
+        </div>
+
+        <div class="saved-artworks">
+            <h3>Your Art Gallery</h3>
+            <div id="artworks-list" class="artworks-grid"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
